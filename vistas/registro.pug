@@ -1,0 +1,32 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/CSS/registro.css")
+    link(rel="shortcut icon", href="/IMAGEN/mega-icon.svg", type="image/x-icon")
+    title Crear cuenta
+  body
+    .register-container
+      .logo
+        img(src="/IMAGEN/images.png", alt="MEGA", width="100")
+      h2 Crear Cuenta
+      form(id="registerForm", action="/api/users/register", method="POST")
+        .input-group
+          label(for="username") Nombre de Usuario
+          input(type="text", id="username", name="username", required)
+        .input-group
+          label(for="email") Correo Electrónico
+          input(type="email", id="email", name="email", required)
+        .input-group
+          label(for="password") Contraseña
+          input(type="password", id="password", name="password", required)
+        .input-group
+          label(for="confirmPassword") Confirmar Contraseña
+          input(type="password", id="confirmPassword", name="confirmPassword", required)
+        button(type="submit" id="submit-btn") Registrarse
+      .footer-text
+        p ¿Ya tienes cuenta? 
+          a(href="/inicio") Inicia Sesión
+      .mensaje
+    script(src="/public/JS/registro.js")
